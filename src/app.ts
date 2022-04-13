@@ -3,7 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import Mongoose from 'mongoose';
 import { MONGODB_URI } from './utils/config';
-// import { generateData } from './seedData';
+import { generateData } from './seedData';
 import errorHandler from './middleware/errorHandler';
 const app = express();
 app.use(cors());
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 Mongoose.connect(MONGODB_URI as string)
 	.then(() => {
 		console.log('connected to monogodb');
-		// generateData();
+		generateData();
 	})
 	.catch(() => {
 		console.log('error occured connecting to MONGODB');
