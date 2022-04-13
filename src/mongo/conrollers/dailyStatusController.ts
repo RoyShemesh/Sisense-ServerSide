@@ -1,3 +1,4 @@
+import { DailyStatus } from '../../utils/interface';
 import DailyStatusModel from '../schema/DailyStatus';
 
 export const dropTable = async () => {
@@ -10,4 +11,14 @@ export const addRandomDailyStatus = async (date: Date) => {
 	const newStatus = new DailyStatusModel({ date, income, outcome, revenue });
 	console.log(newStatus);
 	await newStatus.save();
+};
+
+export const getDataByRange = async (from: string, to: string) => {
+	const data: DailyStatus[] = await DailyStatusModel.find({
+		date: {
+			$gte: from,
+			$lte: to,
+		},
+	});
+	return data;
 };

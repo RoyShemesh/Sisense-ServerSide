@@ -5,6 +5,7 @@ import Mongoose from 'mongoose';
 import { MONGODB_URI } from './utils/config';
 import { generateData } from './seedData';
 import errorHandler from './middleware/errorHandler';
+import dailyStatusRoute from './routes/dailyStatusRoute';
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -17,11 +18,11 @@ app.get('/', (req, res) => {
 Mongoose.connect(MONGODB_URI as string)
 	.then(() => {
 		console.log('connected to monogodb');
-		generateData();
+		// generateData();
 	})
 	.catch(() => {
 		console.log('error occured connecting to MONGODB');
 	});
-
+app.use('/daily', dailyStatusRoute);
 app.use(errorHandler);
 export default app;
