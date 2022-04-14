@@ -12,7 +12,7 @@ export const generateData = async () => {
 			const newDate = loop.setDate(loop.getDate() + 1);
 			loop = new Date(newDate);
 		}
-		console.log('seeded successfully!');
+		console.log('Seeded successfully!');
 	} catch (error) {
 		console.log('error');
 		console.log(error);
