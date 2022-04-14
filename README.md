@@ -2,7 +2,7 @@
 
 ## What this repo stands for
 
-Welcome to grocery mangement readme, this server can recicve requests to get info between two dates from the client-side and access the database collection.
+Welcome to grocery mangement Server Readme, this server can recicve requests to get info between two dates from the client-side and access the database collection.
 Plus this server can seed MongoDB collection with mock data in couple of simple steps.
 
 ## Technologies
