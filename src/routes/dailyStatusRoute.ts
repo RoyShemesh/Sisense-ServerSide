@@ -1,7 +1,7 @@
 import express from 'express';
-import { ErrorForbiddenRequest, ErrorInvalidVariable, ErrorMissingInfo } from '../utils/errorClass';
-import { getDataByRange } from '../mongo/conrollers/dailyStatusController';
 import validator from 'validator';
+import { getDataByRange } from '../mongo/controllers/dailyStatusController';
+import { ErrorForbiddenRequest, ErrorInvalidVariable, ErrorMissingInfo } from '../utils/errorClass';
 import { DailyStatus } from '../utils/interface';
 const router = express.Router();
 
