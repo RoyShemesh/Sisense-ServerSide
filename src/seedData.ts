@@ -1,4 +1,4 @@
-import { addRandomDailyStatus, dropTable } from './mongo/conrollers/dailyStatusController';
+import { addRandomDailyStatus, dropTable } from './mongo/controllers/dailyStatusController';
 
 export const generateData = async () => {
 	await dropTable();
